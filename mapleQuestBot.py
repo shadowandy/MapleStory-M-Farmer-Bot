@@ -1,4 +1,5 @@
 from pyautogui import locateCenterOnScreen, locateOnScreen, click, mouseDown, mouseUp
+from keypress import keyPress
 import random
 import threading
 import time
@@ -19,8 +20,20 @@ searchX = dict(shadow='andy')
 searchY = dict(shadow='andy')
 searchM = [240, 240]
 
+# Buttons binded for character buff spells
+buffNow = 1
+buffWaitMin = 240
+buffWaitMax = 280
+buffButton = ['v', 'c', 'd', 'f']
+buffSlpMin = 2.5
+buffSlpMax = 3.6
+# For switching to buff
+buffButtonSwitch = 'z'
+buffSwitch = 0
+
+
 def questBot():
-	global started, searchX, searchY
+	global started, searchX, searchY, buffNow
 	if started:
 		coord = [0,0]
 		for x in range(1,len(images)):
@@ -45,6 +58,10 @@ def questBot():
 			except IOError as e:
 				print("Catching IO Error from pyautogui")
 	else:
+		if buffNow:
+			castBuff()
+			buffNow = not buffNow
+
 		mouseClick(questStart[0], questStart[1])
 		print("[" + datetime.datetime.fromtimestamp(time.time()).strftime('%d-%m %H:%M:%S') + "] - Clicked 'Start Quest'")
 		started = not started
@@ -53,3 +70,18 @@ def mouseClick(xi,yi):
 	mouseDown(x=xi, y=yi)
 	time.sleep(random.uniform(0.4,0.7))
 	mouseUp()
+
+def castBuff():
+	if buffSwitch:
+		keyPress(buffButtonSwitch, random.uniform(0.1,0.3))
+	rand = random.choice(random.sample(range(buffWaitMin,buffWaitMax),5))
+	threading.Timer(rand, buffToggle).start()
+	for keyValue in buffButton:
+		keyPress(keyValue, random.uniform(0.1,0.3))
+		time.sleep(random.uniform(buffSlpMin,buffSlpMax))
+	if buffSwitch:
+		keyPress(buffButtonSwitch, random.uniform(0.1,0.3))
+
+def buffToggle():
+	global buffNow
+	buffNow = 1
