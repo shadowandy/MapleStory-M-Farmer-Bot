@@ -15,16 +15,16 @@ questStart = [480, 540]
 imagesToggle = 'questClaim.png'
 
 started = 0
-images = ['questScroll.png', 'questClaim.png', 'questComplete.png', 'questSkip.png', 'questAccept.png', 'questComplete.png', 'questAvailable.png', 'questMultiComplete.png']
+images = ['questScroll.png', 'questClaim.png', 'questComplete.png', 'questSkip.png', 'questAccept.png', 'questComplete.png', 'questAvailable.png', 'questMultiComplete.png', 'questConfirm.png']
 searchX = dict(shadow='andy')
 searchY = dict(shadow='andy')
 searchM = [240, 240]
 
 # Buttons binded for character buff spells
 buffNow = 1
-buffWaitMin = 240
-buffWaitMax = 280
-buffButton = ['v', 'c', 'd', 'f']
+buffWaitMin = 480
+buffWaitMax = 520
+buffButton = ['v', 'v', 'c', 'd', 'f']
 buffSlpMin = 2.5
 buffSlpMax = 3.6
 # For switching to buff
