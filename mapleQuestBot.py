@@ -6,12 +6,13 @@ import time
 import sys
 import datetime
 
-screenDimension = [2560, 1440]
-screenScalingFactor = 1
-#screenDimension = [2880, 1800]
-#screenScalingFactor = 2
+#screenDimension = [2560, 1440]
+#screenScalingFactor = 1
+screenDimension = [2880, 1800]
+screenScalingFactor = 2
 
-questStart = [480, 540]
+#questStart = [480, 540]
+questStart = [228, 380]
 imagesToggle = 'questClaim.png'
 
 started = 0
@@ -40,14 +41,14 @@ def questBot():
 			found = 0
 			try:
 				if images[x] in searchX:
-					if locateCenterOnScreen(images[x], grayscale=True, region=(int(searchX[images[x]]),int(searchY[images[x]]),searchM[0],searchM[1])) is not None:
-						(coord[0], coord[1]) = locateCenterOnScreen(images[x], grayscale=True, region=(int(searchX[images[x]]),int(searchY[images[x]]),searchM[0],searchM[1]))
+					if locateCenterOnScreen(images[x], grayscale=True, region=(int(searchX[images[x]]),int(searchY[images[x]]),searchM[0]*screenScalingFactor,searchM[1]*screenScalingFactor)) is not None:
+						(coord[0], coord[1]) = locateCenterOnScreen(images[x], grayscale=True, region=(int(searchX[images[x]]),int(searchY[images[x]]),searchM[0]*screenScalingFactor,searchM[1]*screenScalingFactor))
 						found = not found
 				else:
 					if locateCenterOnScreen(images[x], grayscale=True) is not None:
 						(coord[0], coord[1]) = locateCenterOnScreen(images[x], grayscale=True)
-						searchX[images[x]] = str(coord[0] - searchM[0]/2)
-						searchY[images[x]] = str(coord[1] - searchM[1]/2)
+						searchX[images[x]] = str(coord[0] - searchM[0]/2*screenScalingFactor)
+						searchY[images[x]] = str(coord[1] - searchM[1]/2*screenScalingFactor)
 						found = not found
 				if found:
 					mouseClick(coord[0]/screenScalingFactor, coord[1]/screenScalingFactor)
