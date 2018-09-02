@@ -33,8 +33,14 @@ buffButtonSwitch = 'z'
 buffSwitch = 0
 
 
+# Buttons binded for character summon spells
+summonNow = 1
+summonWaitMin = 260
+summonWaitMax = 290
+summonButton = ['y']
+
 def questBot():
-	global started, searchX, searchY, buffNow
+	global started, searchX, searchY, buffNow, summonNow
 	if started:
 		coord = [0,0]
 		for x in range(1,len(images)):
@@ -62,6 +68,9 @@ def questBot():
 		if buffNow:
 			castBuff()
 			buffNow = not buffNow
+		if summonNow:
+			castSummon()
+			summonNow = not summonNow
 
 		mouseClick(questStart[0], questStart[1])
 		print("[" + datetime.datetime.fromtimestamp(time.time()).strftime('%d-%m %H:%M:%S') + "] - Clicked 'Start Quest'")
@@ -86,3 +95,15 @@ def castBuff():
 def buffToggle():
 	global buffNow
 	buffNow = 1
+
+def castSummon():
+	rand = random.choice(random.sample(range(summonWaitMin,summonWaitMax),5))
+	threading.Timer(rand, summonToggle).start()
+	print ("'" + str(rand) + "'" + " seconds until next castSummon()")
+	for keyValue in summonButton:
+		keyPress(keyValue, random.uniform(0.1,0.3))
+		time.sleep(random.uniform(buffSlpMin,buffSlpMax))
+
+def summonToggle():
+	global summonNow
+	summonNow = 1
