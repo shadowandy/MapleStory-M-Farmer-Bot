@@ -1,3 +1,8 @@
 
 .DS_Store
 *.pyc
+bin/*
+include/*
+lib/*
+list/*
+.Python
