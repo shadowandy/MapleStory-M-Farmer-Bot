@@ -6,17 +6,17 @@ import time
 import sys
 import datetime
 
-#screenDimension = [2560, 1440]
-#screenScalingFactor = 1
-screenDimension = [2880, 1800]
-screenScalingFactor = 2
+screenDimension = [2560, 1440]
+screenScalingFactor = 1
+#screenDimension = [2880, 1800]
+#screenScalingFactor = 2
 
-#questStart = [480, 540]
-questStart = [228, 380]
+questStart = [480, 540]
+#questStart = [228, 380]
 imagesToggle = 'questClaim.png'
 
 started = 0
-images = ['questScroll.png', 'questClaim.png', 'questComplete.png', 'questSkip.png', 'questAccept.png', 'questComplete.png', 'questAvailable.png', 'questMultiComplete.png', 'questConfirm.png']
+images = ['questScroll.png', 'questClaim.png', 'questComplete.png', 'questSkip.png', 'questAccept.png', 'questAvailable.png', 'questMultiComplete.png', 'questConfirm.png']
 searchX = dict(shadow='andy')
 searchY = dict(shadow='andy')
 searchM = [240, 240]
