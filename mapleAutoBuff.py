@@ -9,7 +9,7 @@ import datetime
 buffNow = 1
 buffWaitMin = 480
 buffWaitMax = 520
-buffButton = ['v', 'c', 'd', 'f', 'd', 'f', 'v', 'c']
+buffButton = ['v', 'v', 'c', 'c', 'd', 'd', 'f', 'f', 'f', 'd', 'c','v']
 buffSlpMin = 0.3
 buffSlpMax = 0.6
 # For switching to buff
