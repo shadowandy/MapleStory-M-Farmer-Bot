@@ -12,6 +12,7 @@ screenScalingFactor = 1
 #screenScalingFactor = 2
 
 questStart = [480, 540]
+#questStart = [430, 655]
 #questStart = [228, 380]
 imagesToggle = 'questClaim.png'
 
@@ -25,7 +26,7 @@ searchM = [240, 240]
 buffNow = 1
 buffWaitMin = 480
 buffWaitMax = 520
-buffButton = ['v', 'v', 'c', 'd', 'f']
+buffButton = ['a', 'a', 's', 'd', 'f']
 buffSlpMin = 2.5
 buffSlpMax = 3.6
 # For switching to buff

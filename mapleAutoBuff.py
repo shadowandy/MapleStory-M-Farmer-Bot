@@ -7,9 +7,9 @@ import datetime
 
 # Buttons binded for character buff spells
 buffNow = 1
-buffWaitMin = 480
-buffWaitMax = 520
-buffButton = ['v', 'v', 'c', 'c', 'd', 'd', 'f', 'f', 'f', 'd', 'c','v']
+buffWaitMin = 720
+buffWaitMax = 750
+buffButton = ['a','s','d','f']
 buffSlpMin = 0.3
 buffSlpMax = 0.6
 # For switching to buff
@@ -19,19 +19,28 @@ buffSwitch = 0
 
 # Buttons binded for character summon spells
 summonNow = 1
-summonWaitMin = 260
-summonWaitMax = 290
-summonButton = ['y']
+summonWaitMin = 220
+summonWaitMax = 250
+summonButton = ['c']
+
+# Buttons binded for fever buff
+feverNow = 1
+feverWaitMin = 240
+feverWaitMax = 300
+feverButton = ['c']
 
 def questBot():
-	global buffNow, summonNow
+	global buffNow, summonNow, feverNow
 	
 	if buffNow:
 		castBuff()
 		buffNow = not buffNow
-	#if summonNow:
-	#	castSummon()
-	#	summonNow = not summonNow
+	if summonNow:
+		castSummon()
+		summonNow = not summonNow
+	if feverNow:
+		castFever()
+		feverNow = not feverNow
 
 def castBuff():
 	if buffSwitch:
@@ -60,3 +69,15 @@ def castSummon():
 def summonToggle():
 	global summonNow
 	summonNow = 1
+
+def castFever():
+	rand = random.choice(random.sample(range(feverWaitMin,feverWaitMax),5))
+	threading.Timer(rand, feverToggle).start()
+	print ("'" + str(rand) + "'" + " seconds until next castFever()")
+	for keyValue in feverButton:
+		keyPress(keyValue, random.uniform(0.1,0.3))
+		time.sleep(random.uniform(buffSlpMin,buffSlpMax))
+
+def feverToggle():
+	global feverNow
+	feverNow = 1
