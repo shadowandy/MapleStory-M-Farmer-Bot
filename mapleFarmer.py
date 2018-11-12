@@ -9,30 +9,30 @@ movementDistMin = 0.1
 movementDistMax = 0.8
 movementDuration = 0.0
 movementCountMin = 6
-movementCountMax = 12
+movementCountMax = 9
 movementCount = random.choice(range(movementCountMin,movementCountMax,1))
 
 # Numbers of times to triggers and buttons binded for attacks
 # 0 if you wish to trigger a double move
-skillRand = [0, 1, 2, 2]
-skillButton = ['v']
+skillRand = [0, 2, 2, 3]
+skillButton = ['c']
 skillSlpMin = 0.3
 skillSlpMax = 0.5
 
 # Buttons binded for character buff spells
-buffWaitMin = 1500
-buffWaitMax = 1645
-buffButton = ['c', 'f']
+buffWaitMin = 25
+buffWaitMax = 45
+buffButton = ['f']
 buffSlpMin = 2.5
 buffSlpMax = 3.6
 # For switching to buff
-buffButtonSwitch = 's'
+buffButtonSwitch = ''
 buffSwitch = 0
 
 # Buttons binded for summon spells
-summonWaitMin = 120
-summonWaitMax = 220
-summonButton = ['d', 'd']
+summonWaitMin = 280
+summonWaitMax = 300
+summonButton = ['d']
 summonSlpMin = 2.5
 summonSlpMax = 3.3
 
