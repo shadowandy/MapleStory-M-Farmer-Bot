@@ -24,8 +24,8 @@ searchM = [240, 240]
 
 # Buttons binded for character buff spells
 buffNow = 1
-buffWaitMin = 480
-buffWaitMax = 520
+buffWaitMin = 220
+buffWaitMax = 300
 buffButton = ['a', 'a', 's', 'd', 'f']
 buffSlpMin = 2.5
 buffSlpMax = 3.6
