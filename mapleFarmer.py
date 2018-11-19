@@ -23,18 +23,16 @@ movementCount = random.choice(range(movementCountMin,movementCountMax,1))
 
 # Numbers of times to triggers and buttons binded for attacks
 # 0 if you wish to trigger a double move
-<<<<<<< HEAD
+
 skillRand = [0, 0, 2, 2, 3]
 #skillRand = [0, 3, 3, 2, 3]
-=======
-skillRand = [0, 2, 2, 3]
->>>>>>> cee314b2f2f9e3bef22e0a182598a6dcb650805d
+
 skillButton = ['c']
 skillSlpMin = 0.3
 skillSlpMax = 0.5
 
 # Buttons binded for character buff spells
-<<<<<<< HEAD
+
 buffEnabled = 1
 buffNow = 1
 buffWaitMin = 20
@@ -42,19 +40,11 @@ buffWaitMax = 35
 buffButton = ['d']
 buffSlpMin = 0.4
 buffSlpMax = 0.9
-=======
-buffWaitMin = 25
-buffWaitMax = 45
-buffButton = ['f']
-buffSlpMin = 2.5
-buffSlpMax = 3.6
->>>>>>> cee314b2f2f9e3bef22e0a182598a6dcb650805d
 # For switching to buff
 buffButtonSwitch = ''
 buffSwitch = 0
 
 # Buttons binded for summon spells
-<<<<<<< HEAD
 summonEnabled = 1
 summonNow = 1
 summonWaitMin = 120
@@ -96,17 +86,10 @@ def toggleAuto():
 		manualOn = 0
 		time.sleep(random.uniform(0.8,1.1))
 		keyPress('p', random.uniform(0.1,0.3))
-		time.sleep(random.uniform(0.5,0.9))
+		time.sleep(random.uniform(0.9,1.3))
 		mouseClick(autoX, autoY)
 		manualOn = 0
 		threading.Timer(autoDuration, toggleAuto).start()
-=======
-summonWaitMin = 280
-summonWaitMax = 300
-summonButton = ['d']
-summonSlpMin = 2.5
-summonSlpMax = 3.3
->>>>>>> cee314b2f2f9e3bef22e0a182598a6dcb650805d
 
 def castSkill():
 	if manualOn:
