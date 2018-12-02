@@ -47,9 +47,8 @@ def keyPress(keyValue, duration):
 	time.sleep(random.uniform(0.1,0.2))
 
 def mouseClick(xi,yi):
+	dur = int(random.uniform(0.4,0.7) * 1000)
 	dx = 800
 	dy = 800
-	device.shell("input swipe " + str(dx) + " " + str(dy) + " " + str(dx) + " " + str(dy) + " 500")
-
-
-#keyPress('c', 0.3)
+	device.shell("input swipe " + str(dx) + " " + str(dy) + " " + str(dx) + " " + str(dy) + " " + str(dur))
+	print ("Mouse clicked!")

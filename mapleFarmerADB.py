@@ -70,6 +70,7 @@ def toggleAuto():
 			#keyPress('esc', random.uniform(0.3,0.7))
 			manualOn = 1
 			# time.sleep(random.uniform(0.1,0.3))
+			print ("'" + str(autoMacroDur) + "'" + " seconds until next Auto Battle")
 		else:
 			manualFirst = 0
 		threading.Timer(autoMacroDur, toggleAuto).start()
@@ -80,6 +81,7 @@ def toggleAuto():
 		time.sleep(random.uniform(0.9,1.3))
 		mouseClick(autoX, autoY)
 		manualOn = 0
+		print ("'" + str(autoDuration) + "'" + " seconds until next Macro")
 		threading.Timer(autoDuration, toggleAuto).start()
 
 def castSkill():

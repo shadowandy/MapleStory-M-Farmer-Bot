@@ -8,7 +8,7 @@ time.sleep(2.5)
 toggleAuto()
 #castSummon()
 #castBuff()
-castSummon()
+#castSummon()
 
 # Looping through farming
 while True:
