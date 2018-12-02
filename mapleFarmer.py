@@ -7,8 +7,10 @@ import time
 #
 autoX = 1200
 autoY = 1000
+#autoDuration = 15
+#autoMacroDur = 120
 autoDuration = 15
-autoMacroDur = 120
+autoMacroDur = 60
 manualOn = 1
 manualFirst = 1
 
@@ -24,7 +26,7 @@ movementCount = random.choice(range(movementCountMin,movementCountMax,1))
 # Numbers of times to triggers and buttons binded for attacks
 # 0 if you wish to trigger a double move
 
-skillRand = [0, 0, 2, 2, 3]
+skillRand = [0, 2, 2, 2, 2, 3]
 #skillRand = [0, 3, 3, 2, 3]
 
 skillButton = ['c']
@@ -84,7 +86,7 @@ def toggleAuto():
 		threading.Timer(autoMacroDur, toggleAuto).start()
 	else:
 		manualOn = 0
-		time.sleep(random.uniform(0.8,1.1))
+		time.sleep(random.uniform(1.1,1.3))
 		keyPress('p', random.uniform(0.1,0.3))
 		time.sleep(random.uniform(0.9,1.3))
 		mouseClick(autoX, autoY)

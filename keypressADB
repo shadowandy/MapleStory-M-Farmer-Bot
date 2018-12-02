@@ -1,0 +1,11 @@
+from adb.client import Client as AdbClient
+
+client = AdbClient(host="127.0.0.1", port=5037)
+device = client.device("emulator-5554")
+
+def keyPress(keyValue, duration):
+	keyDown(keyValue)
+	time.sleep(duration)
+	keyUp(keyValue)
+	print ("'" + keyValue + "'" + " key pressed!")
+	time.sleep(random.uniform(0.1,0.2))

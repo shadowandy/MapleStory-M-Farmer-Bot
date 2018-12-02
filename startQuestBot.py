@@ -8,4 +8,4 @@ time.sleep(2.5)
 # Looping through farming
 while True:
 	questBot()
-	time.sleep(random.uniform(1,2))
+	time.sleep(random.uniform(0.5,1))

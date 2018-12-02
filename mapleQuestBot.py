@@ -11,7 +11,7 @@ screenScalingFactor = 1
 #screenDimension = [2880, 1800]
 #screenScalingFactor = 2
 
-questStart = [480, 540]
+questStart = [480, 580]
 #questStart = [430, 655]
 #questStart = [228, 380]
 imagesToggle = 'questClaim.png'
