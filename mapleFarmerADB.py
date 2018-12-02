@@ -1,4 +1,4 @@
-from pyautogui import locateCenterOnScreen, locateOnScreen, click, mouseDown, mouseUp, keyUp
+#from pyautogui import locateCenterOnScreen, locateOnScreen, click, mouseDown, mouseUp, keyUp
 from keypressADB import keyPress, mouseClick
 import random
 import threading
@@ -107,9 +107,6 @@ def castSkill():
 def castBuff():
 	if buffSwitch:
 		keyPress(buffButtonSwitch, random.uniform(0.1,0.3))
-	#rand = random.choice(random.sample(range(buffWaitMin,buffWaitMax),5))
-	#threading.Timer(rand, castBuff).start()
-	#print ("'" + str(rand) + "'" + " seconds until next castBuff()")
 	for keyValue in buffButton:
 		keyPress(keyValue, random.uniform(0.1,0.3))
 		time.sleep(random.uniform(buffSlpMin,buffSlpMax))
@@ -121,9 +118,6 @@ def castBuffNow():
 	buffNow = not buffNow
 
 def castSummon():
-	#rand = random.choice(random.sample(range(summonWaitMin,summonWaitMax),5))
-	#threading.Timer(rand, castSummon).start()
-	#print ("'" + str(rand) + "'" + " seconds until next castSummon()")
 	for keyValue in summonButton:
 		keyPress(keyValue, random.uniform(0.1,0.3))
 		time.sleep(random.uniform(summonSlpMin,summonSlpMax))

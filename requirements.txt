@@ -1,3 +1,4 @@
 pyautogui
 pyobjc-core
 pyobjc
+pure-python-adb
